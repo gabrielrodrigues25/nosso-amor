@@ -1,0 +1,174 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+body {
+  background: #0f0f14;
+  color: #fff;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+#contador {
+  text-align: center;
+  padding: 15px;
+  font-size: 1.1rem;
+  color: #ff9acb;
+}
+
+.mes-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px;
+}
+
+button {
+  background: linear-gradient(135deg, #ff5fa2, #ff9acb);
+  border: none;
+  color: #fff;
+  padding: 12px 14px;
+  border-radius: 50%;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 10px #ff9acb;
+}
+
+.mes {
+  max-width: 360px;
+  text-align: center;
+}
+
+.mes h2 {
+  margin-bottom: 5px;
+}
+
+.mes p {
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+  color: #ffc1dd;
+}
+
+#midiaWrapper {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  background: #000;
+  border-radius: 15px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.5s;
+}
+
+#midiaWrapper img,
+#midiaWrapper video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.player {
+  margin: 15px auto;
+  max-width: 300px;
+  text-align: center;
+}
+
+.player button {
+  margin-top: 8px;
+  width: 100%;
+  border-radius: 10px;
+}
+
+canvas {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+}
+
+/* 📱 MOBILE */
+@media (max-width: 480px) {
+  button {
+    padding: 10px;
+    font-size: 1rem;
+  }
+
+  .mes {
+    max-width: 95%;
+  }
+}
+
+.player-youtube {
+  position: relative;
+  max-width: 360px;
+  margin: 25px auto;
+  padding: 12px;
+  background: rgba(0,0,0,0.4);
+  border-radius: 18px;
+  box-shadow: 0 0 20px rgba(255,105,180,0.35);
+  text-align: center;
+}
+
+.player-youtube iframe {
+  width: 100%;
+  height: 200px;
+  border-radius: 14px;
+}
+
+.player-youtube button {
+  margin-top: 10px;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #ff5fa2, #ff8fc7);
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.player-youtube button:hover {
+  opacity: 0.9;
+}
+/* FUNDO COM FOTOS DO MÊS */
+#fundoFotos {
+  position: fixed;
+  inset: 0;
+  z-index: 0; /* IMPORTANTE */
+  overflow: hidden;
+  pointer-events: none;
+}
+
+body {
+  background: #0b0b0f;
+  position: relative;
+}
+
+.mes-container,
+.player-youtube,
+#contador {
+  position: relative;
+  z-index: 2;
+}
+
+.foto-fundo {
+  position: absolute;
+  width: 120px;
+  height: 160px;
+  object-fit: cover;
+  opacity: 0.18;
+  border-radius: 14px;
+  filter: blur(0.5px);
+  transform: rotate(var(--rotacao));
+}
+
+
+
